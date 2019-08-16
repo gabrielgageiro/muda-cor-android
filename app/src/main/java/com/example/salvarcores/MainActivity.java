@@ -23,15 +23,21 @@ public class MainActivity extends AppCompatActivity {
         btnTrocar = findViewById(R.id.btn_trocar);
 
         btnSalvar.setOnClickListener(o ->{
-            TextView quadradoTres = findViewById(R.id.quadrado_tres);
-            String s = Utils.randomColor();
-            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-            quadradoTres.setBackgroundColor(Color.parseColor(Utils.randomColor()));
+
         });
 
 
         btnTrocar.setOnClickListener(o ->{
-
+            TextView quadradoUm = findViewById(R.id.quadrado_um);
+            TextView quadradoDois = findViewById(R.id.quadrado_dois);
+            TextView quadradoTres = findViewById(R.id.quadrado_tres);
+            TextView quadradoQuatro = findViewById(R.id.quadrado_quatro);
+            TextView quadradoCinco = findViewById(R.id.quadrado_cinco);
+            quadradoUm.setBackgroundColor(Color.parseColor(Utils.randomColor()));
+            quadradoDois.setBackgroundColor(Color.parseColor(Utils.randomColor()));
+            quadradoTres.setBackgroundColor(Color.parseColor(Utils.randomColor()));
+            quadradoQuatro.setBackgroundColor(Color.parseColor(Utils.randomColor()));
+            quadradoCinco.setBackgroundColor(Color.parseColor(Utils.randomColor()));
         });
     }
 }
