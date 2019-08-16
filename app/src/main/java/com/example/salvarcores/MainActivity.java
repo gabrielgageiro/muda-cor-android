@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnSalvar;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(o ->{
             TextView quadradoTres = findViewById(R.id.quadrado_tres);
             String s = Utils.randomColor();
-            System.out.println(s);
+            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
             quadradoTres.setBackgroundColor(Color.parseColor(Utils.randomColor()));
         });
 

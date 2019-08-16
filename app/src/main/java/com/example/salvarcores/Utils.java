@@ -3,6 +3,7 @@ package com.example.salvarcores;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -10,15 +11,15 @@ import java.util.List;
 import java.util.Random;
 
 public class Utils {
-    private static final List<String> colorList = Arrays.asList("BLACK","BLUE","CYAN","DKGRAY","GRAY","GREEN"
-            ,"LTGRAY","MAGENTA","RED","WHITE","YELLOW"
+    private static final List<String> colorList = Arrays.asList("red", "blue", "green", "black", "white", "gray", "cyan", "magenta", "yellow",
+            "lightgray", "darkgray", "grey", "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon", "navy", "olive", "purple","silver", "teal"
     );
 
     public static final String randomColor(){
         Random r = new Random();
 
-        int index = r.nextInt((colorList.size() - 1));
-        return colorList.get(index);
+        int index = r.nextInt((colorList.size() - 0) - 1) + 0;
+        return colorList.get(index).toLowerCase();
     }
 
     public static final void putString(final Context context, final String key, final String value) {
