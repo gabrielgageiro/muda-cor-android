@@ -32,7 +32,7 @@ public class Utils {
     }
 
     public static final String getString(final Context context, final String key) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, "");
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, "white");
     }
 
     public static final void putBoolean(final Context context, final String key, final boolean value) {
