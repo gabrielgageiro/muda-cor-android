@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Random;
 
 public class Utils {
-    private static final List<String> colorList = Arrays.asList("red", "blue", "green", "black", "white", "gray", "cyan", "magenta", "yellow",
-            "lightgray", "darkgray", "grey", "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon", "navy", "olive", "purple","silver", "teal"
+    private static final List<String> colorList = Arrays.asList("0xff000000", "0xff0000ff", "0xff00ffff", "0xff444444", "0xff888888", "0xff00ff00", "0xffcccccc", "0xffff00ff", "0xffff0000",
+            "0xffffffff", "0xffffff00", "ece6e6"
     );
-
+//, "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon", "navy", "olive", "purple","silver", "teal"
     public static final String randomColor(){
         Random r = new Random();
 

@@ -2,10 +2,9 @@ package com.example.salvarcores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,14 +32,17 @@ public class MainActivity extends AppCompatActivity {
         quadradoQuatro = findViewById(R.id.quadrado_quatro);
         quadradoCinco = findViewById(R.id.quadrado_cinco);
 
-        quadradoUm.setBackgroundColor(Color.parseColor(Utils.getString(this,Integer.toString(quadradoUm.getId()))));
+        Integer color = Utils.getInt(this, Integer.toString(quadradoUm.getId()));
+        quadradoUm.setBackgroundColor(Color.parseColor(color));
+
 
         btnSalvar.setOnClickListener(o ->{
-            Toast.makeText(this, quadradoUm.getBackground().toString(),Toast.LENGTH_SHORT).show();
+            ColorDrawable viewColor = (ColorDrawable) quadradoUm.getBackground();
 
-            Utils.putString(this, Integer.toString(quadradoUm.getId()), quadradoUm.getBackground().toString());
+            Toast.makeText(this, Integer.toString(viewColor.getColor()),Toast.LENGTH_SHORT).show();
+
+            Utils.putInt(this, Integer.toString(quadradoUm.getId()), viewColor.getColor());
         });
-
 
         btnTrocar.setOnClickListener(o ->{
             quadradoUm.setBackgroundColor(Color.parseColor(Utils.randomColor()));
